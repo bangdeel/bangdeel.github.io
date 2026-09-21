@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="私人小影院搭建指南 - 专注家庭影音室设计与装修，提供沉浸式观影方案、家庭影院设备选购建议及避坑技巧，打造专属私人观影空间。">
+    <meta name="keywords" content="私人小影院,家庭影院,影音室设计,客厅影院,家庭影音装修">
+    <title>私人小影院-沉浸式家庭影音室设计与装修指南</title>
+    <style>
+        :root {
+            --primary-color: #1a1a2e;
+            --secondary-color: #16213e;
+            --accent-color: #e94560;
+            --text-light: #f1f1f1;
+            --text-gray: #a0a0a0;
+            --bg-dark: #0f0f1a;
+            --card-bg: #1f1f35;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Utility Classes */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+            margin: 0.5rem auto 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background-color: var(--accent-color);
+            color: white;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .btn:hover {
+            background-color: #d13650;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--accent-color);
+            color: var(--accent-color);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(15, 15, 26, 0.95);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url('https://picsum.photos/seed/cinema/1920/1080.jpg') no-repeat center center/cover;
+            padding: 0 1rem;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            color: #ddd;
+            margin-bottom: 2.5rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 5rem 0;
+            background-color: var(--bg-dark);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background-color: var(--card-bg);
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+
+        .feature-card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+
+        .feature-card p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+
+        /* Design Process */
+        .process {
+            padding: 5rem 0;
+            background-color: var(--secondary-color);
+        }
+
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: rgba(255, 255, 255, 0.1);
+            z-index: 0;
+        }
+
+        .step {
+            position: relative;
+            z-index: 1;
+            flex: 1;
+            text-align: center;
+            min-width: 200px;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background-color: var(--secondary-color);
+            border: 2px solid var(--accent-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--accent-color);
+        }
+
+        .step h3 {
+            margin-bottom: 1rem;
+        }
+
+        .step p {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            padding: 0 1rem;
+        }
+
+        /* Equipment Guide */
+        .equipment {
+            padding: 5rem 0;
+        }
+
+        .equipment-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .equipment-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .equipment-list {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .equipment-item {
+            display: flex;
+            gap: 1rem;
+            background-color: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .equip-icon {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            min-width: 30px;
+        }
+
+        .equip-info h4 {
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .equip-info p {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 5rem 0;
+            background-color: var(--secondary-color);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background-color: var(--card-bg);
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .faq-question:hover {
+            color: var(--accent-color);
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem 1.5rem;
+            color: var(--text-gray);
+            display: none;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 1rem;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+
+        .faq-item.active .faq-question::before {
+            content: '+';
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            padding: 4rem 0 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+            color: var(--text-light);
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-gray);
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent-color);
+            padding-left: 5px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .nav-container nav {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: var(--secondary-color);
+                flex-direction: column;
+                padding: 1rem;
+                text-align: center;
+            }
+
+            .nav-container nav.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .process-steps::before {
+                display: none;
+            }
+
+            .equipment-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .equipment-image {
+                order: -1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <span>///</span> 私人影院
+            </a>
+            <div class="mobile-menu-btn" onclick="toggleMenu()">☰</div>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="#features">核心优势</a></li>
+                    <li><a href="#process">设计流程</a></li>
+                    <li><a href="#equipment">设备选购</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>打造您的专属私人小影院</h1>
+                <p>从客厅改造到独立影音室，我们提供一站式家庭影院设计、装修与设备配置方案，让每一次观影都成为享受。</p>
+                <div style="display: flex; gap: 1rem; justify-content: center;">
+                    <a href="#process" class="btn">开始设计</a>
+                    <a href="#equipment" class="btn btn-outline">了解设备</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features">
+            <div class="container">
+                <h2 class="section-title">为什么要搭建私人小影院？</h2>
+                <div class="features-grid">
+                    <article class="feature-card">
+                        <div class="feature-icon">🎬</div>
+                        <h3>极致视听体验</h3>
+                        <p>告别公共影院的嘈杂与干扰，在私人空间内享受高保真音响带来的环绕声场和高清画面，沉浸感无可比拟。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">⏰</div>
+                        <h3>时间与空间自由</h3>
+                        <p>无需预约档期，想看就看。无论是深夜独处还是家庭聚会，私人影院都能满足您对观影时间的掌控权。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">🛋️</div>
+                        <h3>舒适观影环境</h3>
+                        <p>配备舒适的沙发、智能灯光控制与舒适的温度调节，打造一个真正放松身心的休闲角落。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Design Process Section -->
+        <section id="process" class="process">
+            <div class="container">
+                <h2 class="section-title">私人影院设计流程</h2>
+                <div class="process-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3>需求评估</h3>
+                        <p>确定预算范围、空间大小（客厅/地下室/独立房间）及主要用途（商务/娱乐/家庭）。</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3>声学处理</h3>
+                        <p>进行声学勘测，通过吸音板、扩散板和隔音棉优化室内声场，减少回声和驻波。</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h3>设备选型</h3>
+                        <p>根据空间尺寸选择投影仪/电视、功放、音箱及播放设备，确保视听效果最大化。</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <h3>装修施工</h3>
+                        <p>暗房布线、吊顶造型、灯光设计及软装搭配，完成整体环境营造。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Equipment Guide Section -->
+        <section id="equipment" class="equipment">
+            <div class="container">
+                <h2 class="section-title">核心设备选购指南</h2>
+                <div class="equipment-grid">
+                    <div class="equipment-image">
+                        <img src="https://picsum.photos/seed/homecinema_setup/600/400.jpg" alt="家庭影院设备摆放示意图">
+                    </div>
+                    <div class="equipment-list">
+                        <div class="equipment-item">
+                            <div class="equip-icon">📽️</div>
+                            <div class="equip-info">
+                                <h4>投影系统 (首选)</h4>
+                                <p>建议选择4K激光投影仪，亮度建议3000流明以上，投射比1.2:1适合家用空间。</p>
+                            </div>
+                        </div>
+                        <div class="equipment-item">
+                            <div class="equip-icon">🔊</div>
+                            <div class="equip-info">
+                                <h4>音响系统 (5.1.2声道)</h4>
+                                <p>主音箱负责中低音，环绕音箱营造氛围，天空声道提升沉浸感，功放需支持Dolby Atmos。</p>
+                            </div>
+                        </div>
+                        <div class="equipment-item">
+                            <div class="equip-icon">🎬</div>
+                            <div class="equip-info">
+                                <h4>屏幕与幕布</h4>
+                                <p>白塑幕布性价比高，玻纤幕布增益适中，抗光幕布适合环境光较亮的空间。</p>
+                            </div>
+                        </div>
+                        <div class="equipment-item">
+                            <div class="equip-icon">🎛️</div>
+                            <div class="equip-info">
+                                <h4>智能中控系统</h4>
+                                <p>一键切换观影模式（灯光变暗、窗帘关闭、音响启动），大幅提升使用便捷性。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="faq">
+            <div class="container faq-container">
+                <h2 class="section-title">常见问题解答</h2>
+                
+                <div class="faq-item" onclick="toggleFaq(this)">
+                    <div class="faq-question">客厅可以改成私人影院吗？</div>
+                    <div class="faq-answer">可以。主要难点在于环境光控制和隔音。通过安装遮光窗帘、使用抗光幕布，并对墙体进行简易的声学吸音处理，即可在客厅获得接近专业影院的体验。</div>
+                </div>
+
+                <div class="faq-item" onclick="toggleFaq(this)">
+                    <div class="faq-question">家庭影院的预算大概是多少？</div>
+                    <div class="faq-answer">预算差异较大。入门级（百寸电视+入门音响）约在1-3万元；中高端（激光投影+全频音箱）约在5-15万元；专业级（独立影音室+顶级设备）则可达数十万甚至更高。</div>
+                </div>
+
+                <div class="faq-item" onclick="toggleFaq(this)">
+                    <div class="faq-question">如何判断观影距离和屏幕尺寸？</div>
+                    <div class="faq-answer">遵循“黄金比例”。屏幕高度与到屏幕距离的比值约为1:1.6至1:2.2。例如，观看距离3米，建议选择100英寸左右的屏幕。具体可参考投影仪的投射比参数。</div>
+                </div>
+
+                <div class="faq-item" onclick="toggleFaq(this)">
+                    <div class="faq-question">装修时需要注意哪些声学问题？</div>
+                    <div class="faq-answer">重点在于处理低频驻波。通常在影音室后墙、侧墙安装低频陷阱，在吸音板避免声场过于干涩。避免使用大面积玻璃窗，以防声音反射产生杂音。</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <p style="color: var(--text-gray); font-size: 0.9rem;">
+                        专注为家庭用户和中小型商业空间提供私人影院解决方案，致力于普及高品质影音生活。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#features">核心优势</a></li>
+                        <li><a href="#process">设计流程</a></li>
+                        <li><a href="#equipment">设备选购</a></li>
+                        <li><a href="#faq">常见问题</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>服务范围</h4>
+                    <ul>
+                        <li><a href="#">影音室设计</a></li>
+                        <li><a href="#">家庭影院装修</a></li>
+                        <li><a href="#">设备安装调试</a></li>
+                        <li><a href="#">声学处理方案</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 私人小影院设计指南. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+
+    <script>
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const nav = document.getElementById('main-nav');
+            nav.classList.toggle('active');
+        }
+
+        // FAQ Accordion
+        function toggleFaq(element) {
+            // Close all other items
+            const allItems = document.querySelectorAll('.faq-item');
+            allItems.forEach(item => {
+                if (item !== element) {
+                    item.classList.remove('active');
+                }
+            });
+            // Toggle clicked item
+            element.classList.toggle('active');
+        }
+
+        // Smooth Scroll for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    document.getElementById('main-nav').classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+                          </html>
