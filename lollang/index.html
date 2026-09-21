@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="LOL狼人（沃里克）英雄攻略、技能解析、出装推荐及连招技巧。提供全版本符文搭配与实战玩法指南。">
+    <meta name="keywords" content="lol狼人,沃里克,LOL攻略,英雄联盟打野,狼人出装,狼人连招">
+    <title>lol狼人-英雄联盟沃里克打野实战攻略与出装推荐</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #9e4b4b;
+            --accent-color: #d65c5c;
+            --bg-dark: #121212;
+            --bg-card: #1e1e1e;
+            --bg-hover: #2a2a2a;
+            --text-main: #ffffff;
+            --text-secondary: #b0b0b0;
+            --border-color: #333;
+            --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--accent-color);
+            padding-left: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .section-title span {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            font-weight: normal;
+            margin-left: 10px;
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(18, 18, 18, 0.95);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 15px 0;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            background: linear-gradient(135deg, #1a0505 0%, #2d1b1b 100%);
+            padding: 80px 0;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://picsum.photos/seed/lolwerewolf/1600/900') no-repeat center center/cover;
+            opacity: 0.2;
+            mix-blend-mode: overlay;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #ddd;
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .cta-button:hover {
+            background-color: #b53b3b;
+            transform: translateY(-2px);
+        }
+
+        /* Skill Tree */
+        .skill-tree {
+            padding: 60px 0;
+            background-color: var(--bg-dark);
+        }
+
+        .skill-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 25px;
+            transition: border-color 0.3s;
+        }
+
+        .skill-card:hover {
+            border-color: var(--accent-color);
+        }
+
+        .skill-icon {
+            width: 60px;
+            height: 60px;
+            background-color: #333;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--accent-color);
+        }
+
+        .skill-card h3 {
+            margin-bottom: 10px;
+            font-size: 1.25rem;
+        }
+
+        .skill-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Build Section */
+        .build-section {
+            padding: 60px 0;
+            background-color: #181818;
+        }
+
+        .build-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+
+        .items-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .item-row {
+            display: flex;
+            align-items: center;
+            background-color: var(--bg-card);
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px solid transparent;
+        }
+
+        .item-row:hover {
+            border-color: var(--border-color);
+        }
+
+        .item-rank {
+            width: 30px;
+            height: 30px;
+            background-color: #333;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+            font-size: 0.9rem;
+        }
+
+        .item-info {
+            flex: 1;
+        }
+
+        .item-name {
+            font-weight: 600;
+            display: block;
+        }
+
+        .item-stat {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .item-note {
+            font-size: 0.8rem;
+            color: #888;
+            margin-top: 4px;
+            font-style: italic;
+        }
+
+        .runes-panel {
+            background-color: var(--bg-card);
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            height: fit-content;
+        }
+
+        .rune-category {
+            margin-bottom: 20px;
+        }
+
+        .rune-category h4 {
+            margin-bottom: 10px;
+            color: var(--accent-color);
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .rune-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+
+        .rune-icon {
+            width: 24px;
+            height: 24px;
+            background-color: #444;
+            border-radius: 4px;
+            margin-right: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+        }
+
+        /* Gameplay Tips */
+        .tips-section {
+            padding: 60px 0;
+        }
+
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .tip-card {
+            background-color: var(--bg-card);
+            padding: 25px;
+            border-radius: 8px;
+        }
+
+        .tip-card h3 {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .tip-card ul {
+            padding-left: 20px;
+        }
+
+        .tip-card li {
+            margin-bottom: 10px;
+            color: var(--text-secondary);
+            position: relative;
+        }
+
+        .tip-card li::before {
+            content: '•';
+            color: var(--accent-color);
+            position: absolute;
+            left: -15px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0a0a0a;
+            padding: 40px 0;
+            border-top: 1px solid var(--border-color);
+            margin-top: 60px;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .nav-wrapper {
+                flex-direction: column;
+                gap: 15px;
+            }
+            nav ul {
+                gap: 15px;
+                font-size: 0.9rem;
+            }
+            .build-container {
+                grid-template-columns: 1fr;
+            }
+            .section-title {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <div class="logo">狼人<span>攻略</span></div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#skills">技能解析</a></li>
+                    <li><a href="#build">出装符文</a></li>
+                    <li><a href="#tips">实战技巧</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <h1>LOL 狼人 (沃里克) 攻略</h1>
+                <p>深入解析沃里克的野区统治力、无脑追击机制与续航能力，掌握从青铜到大师的进阶玩法。</p>
+                <a href="#build" class="cta-button">查看最新出装推荐</a>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skill-tree">
+            <div class="container">
+                <div class="section-title">
+                    <h2>技能机制解析</h2>
+                    <span>核心机制与伤害计算</span>
+                </div>
+                <div class="skill-grid">
+                    <article class="skill-card">
+                        <div class="skill-icon">W</div>
+                        <h3>血迹追踪 (W)</h3>
+                        <p>狼人的核心技能。开启后获得移速加成，并在3秒内再次激活来锁定敌方英雄。这是他能够无视地形进行追击的关键。</p>
+                    </article>
+                    <article class="skill-card">
+                        <div class="skill-icon">Q</div>
+                        <h3>嗜血扑击 (Q)</h3>
+                        <p>造成伤害并治疗狼人。命中非英雄单位会返还法力值，使其在刷野时拥有极高的续航能力。</p>
+                    </article>
+                    <article class="skill-card">
+                        <div class="skill-icon">E</div>
+                        <h3>无尽利刃 (E)</h3>
+                        <p>强化下一次攻击，造成额外伤害并降低目标护甲。是前期补刀和打伤害的主要手段。</p>
+                    </article>
+                    <article class="skill-card">
+                        <div class="skill-icon">R</div>
+                        <h3>鲜血盛宴 (R)</h3>
+                        <p>开启后获得大量生命偷取，并造成范围伤害。在团战中可以迅速切入敌方后排，为团队提供持续输出。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Build Section -->
+        <section id="build" class="build-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>出装与符文搭配</h2>
+                    <span>适配不同局势的装备选择</span>
+                </div>
+                <div class="build-container">
+                    <!-- Items -->
+                    <div class="items-list">
+                        <div class="item-row">
+                            <div class="item-rank">1</div>
+                            <div class="item-info">
+                                <span class="item-name">猎人的宽刃刀</span>
+                                <span class="item-stat">+10% 生命偷取 | +10 攻击力</span>
+                                <span class="item-note">打野必备，升级为追猎者护宝</span>
+                            </div>
+                        </div>
+                        <div class="item-row">
+                            <div class="item-rank">2</div>
+                            <div class="item-info">
+                                <span class="item-name">提亚马特</span>
+                                <span class="item-stat">+40 攻击力 | +15% 暴击几率</span>
+                                <span class="item-note">提升清野效率，配合W技能快速转圈</span>
+                            </div>
+                        </div>
+                        <div class="item-row">
+                            <div class="item-rank">3</div>
+                            <div class="item-info">
+                                <span class="item-name">斯特拉克的挑战护手</span>
+                                <span class="item-stat">+400 生命值 | +50 攻击力</span>
+                                <span class="item-note">提供高额血量与护盾，防止被秒杀</span>
+                            </div>
+                        </div>
+                        <div class="item-row">
+                            <div class="item-rank">4</div>
+                            <div class="item-info">
+                                <span class="item-name">斯特拉克的挑战护手</span>
+                                <span class="item-stat">+400 生命值 | +50 攻击力</span>
+                                <span class="item-note">第二件核心装，大幅提升坦度</span>
+                            </div>
+                        </div>
+                        <div class="item-row">
+                            <div class="item-rank">5</div>
+                            <div class="item-info">
+                                <span class="item-name">死亡之舞</span>
+                                <span class="item-stat">+40 攻击力 | +30% 急速</span>
+                                <span class="item-note">减少受到的伤害，配合吸血效果</span>
+                            </div>
+                        </div>
+                        <div class="item-row">
+                            <div class="item-rank">6</div>
+                            <div class="item-info">
+                                <span class="item-name">玛莫提乌斯之噬</span>
+                                <span class="item-stat">+60 攻击力 | +40% 技能急速</span>
+                                <span class="item-note">后期高魔抗敌人时替换为饮血</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Runes -->
+                    <aside class="runes-panel">
+                        <div class="rune-category">
+                            <h4>主系：主宰</h4>
+                            <div class="rune-item">
+                                <div class="rune-icon">⚡</div>
+                                <div>
+                                    <strong>黑暗收割</strong>
+                                    <div style="font-size: 0.8rem; color:#888">对低血量英雄造成额外伤害</div>
+                                </div>
+                            </div>
+                            <div class="rune-item">
+                                <div class="rune-icon">💀</div>
+                                <div>
+                                    <strong>血之滋味</strong>
+                                    <div style="font-size: 0.8rem; color:#888">伤害或击杀提供生命偷取</div>
+                                </div>
+                            </div>
+                            <div class="rune-item">
+                                <div class="rune-icon">🩸</div>
+                                <div>
+                                    <strong>贪婪猎手</strong>
+                                    <div style="font-size: 0.8rem; color:#888">技能提供少量生命偷取</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rune-category">
+                            <h4>副系：精密</h4>
+                            <div class="rune-item">
+                                <div class="rune-icon">⚔️</div>
+                                <div>
+                                    <strong>征服者</strong>
+                                    <div style="font-size: 0.8rem; color:#888">持续作战提供属性叠加</div>
+                                </div>
+                            </div>
+                            <div class="rune-item">
+                                <div class="rune-icon">🛡️</div>
+                                <div>
+                                    <strong>适应性外壳</strong>
+                                    <div style="font-size: 0.8rem; color:#888">根据缺属性提升数值</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rune-category">
+                            <h4>小符文</h4>
+                            <div class="rune-item">
+                                <div class="rune-icon">1</div> 灵光披风
+                            </div>
+                            <div class="rune-item">
+                                <div class="rune-icon">2</div> 眼球收集器
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gameplay Tips -->
+        <section id="tips" class="tips-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>实战技巧与连招</h2>
+                    <span>从新手到高手的进阶指南</span>
+                </div>
+                <div class="tips-grid">
+                    <article class="tip-card">
+                        <h3>野区刷野路线</h3>
+                        <ul>
+                            <li><strong>红开：</strong> 利用W技能回血，快速清完红buff直接抓上路。</li>
+                            <li><strong>蓝开：</strong> 适合前期需要频繁使用技能的打野，建议3级后反野。</li>
+                            <li><strong>6级前：</strong> 专注于发育，利用Q技能的回蓝机制减少回城次数。</li>
+                        </ul>
+                    </article>
+                    <article class="tip-card">
+                        <h3>抓人连招</h3>
+                        <ul>
+                            <li><strong>标准连招：</strong> W(加速) -> Q(伤害+回血) -> E(减甲) -> 平A -> R(收割)。</li>
+                            <li><strong>留人技巧：</strong> 在敌人交出位移技能后，立即开启W进行反向追踪。</li>
+                            <li><strong>越塔：</strong> R技能提供高额吸血，可配合辅助强行越塔击杀落单敌人。</li>
+                        </ul>
+                    </article>
+                    <article class="tip-card">
+                        <h3>团战思路</h3>
+                        <ul>
+                            <li>狼人是一个半肉刺客，不要第一个进场。</li>
+                            <li>寻找敌方C位走位失误或技能交完的瞬间切入。</li>
+                            <li>利用W技能的追踪效果绕后，切断敌方撤退路线。</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 LOL狼人攻略站. 本站内容仅供学习交流，与Riot Games无关。</p>
+            <p style="margin-top: 10px; color: #555;">英雄联盟、LoL及相关标志均为Riot Games的商标。</p>
+        </div>
+    </footer>
+
+</body>
+</html>
