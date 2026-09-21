@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>神魔大陆守护天赋加点 - 官方最新加点攻略与实战指南</title>
+    <meta name="description" content="神魔大陆守护天赋加点详细攻略，包含全阶段加点方案、PVP与PVE实战技巧、属性优先级分析及技能搭配推荐，助你打造最强守护者。">
+    <meta name="keywords" content="神魔大陆守护天赋加点, 神魔大陆守护加点, 神魔大陆守护攻略, 神魔大陆职业加点">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #8B4513;
+            --secondary-color: #D2691E;
+            --accent-color: #FFD700;
+            --bg-color: #f4f4f4;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-light: #666666;
+            --border-radius: 8px;
+            --spacing-unit: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: #2c2c2c;
+            color: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--accent-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1a1a1a 0%, #4a2c20 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--accent-color);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 4px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #a0522d;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: -30px auto 40px;
+            padding: 0 var(--spacing-unit);
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Content Grid */
+        .grid-layout {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .grid-layout {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* Cards */
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--primary-color);
+        }
+
+        .card h2 {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+        }
+
+        .card h2::before {
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 20px;
+            background-color: var(--secondary-color);
+            margin-right: 10px;
+        }
+
+        /* Talent Points Visualization */
+        .talent-tree {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .tree-column {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 140px;
+        }
+
+        .tree-title {
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .skill-node {
+            width: 50px;
+            height: 50px;
+            border: 2px solid #ccc;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            position: relative;
+            background: #fff;
+            transition: all 0.3s;
+        }
+
+        .skill-node.active {
+            border-color: var(--accent-color);
+            background-color: #fff8e1;
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+
+        .skill-node.active::after {
+            content: '★';
+            color: var(--accent-color);
+            font-size: 1.2rem;
+        }
+
+        .skill-node.locked {
+            opacity: 0.5;
+            border-style: dashed;
+        }
+
+        .skill-node span {
+            font-size: 0.8rem;
+            position: absolute;
+            bottom: -20px;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Guide Lists */
+        .guide-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .guide-list li:last-child {
+            border-bottom: none;
+        }
+
+        .tag {
+            font-size: 0.8rem;
+            padding: 2px 8px;
+            border-radius: 4px;
+            background: #eee;
+            color: #555;
+        }
+
+        .tag.pve { background: #e3f2fd; color: #1976d2; }
+        .tag.pvp { background: #ffebee; color: #d32f2f; }
+        .tag.core { background: #fff3e0; color: #f57c00; }
+
+        /* Stats Table */
+        .stats-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        .stats-table th, .stats-table td {
+            text-align: left;
+            padding: 12px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .stats-table th {
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .stats-table tr:hover {
+            background-color: #f9f9f9;
+        }
+
+        /* Sidebar */
+        aside .card {
+            position: sticky;
+            top: 20px;
+        }
+
+        .sidebar-title {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            font-weight: bold;
+            color: var(--text-main);
+        }
+
+        .quick-links a {
+            display: block;
+            padding: 8px 0;
+            color: var(--text-light);
+            border-bottom: 1px dashed #ddd;
+        }
+
+        .quick-links a:hover {
+            color: var(--secondary-color);
+            padding-left: 5px;
+        }
+
+        /* FAQ Section */
+        .faq-item {
+            margin-bottom: 15px;
+            border: 1px solid #eee;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            background-color: #f9f9f9;
+            padding: 15px;
+            cursor: pointer;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .faq-answer {
+            padding: 15px;
+            display: none;
+            background-color: #fff;
+            color: var(--text-light);
+            border-top: 1px solid #eee;
+        }
+
+        .faq-item.open .faq-answer {
+            display: block;
+        }
+
+        .faq-item.open .faq-question {
+            background-color: #fff3e0;
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c2c2c;
+            color: #999;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .footer-links {
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            margin: 0 10px;
+            color: #ccc;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .copyright {
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-inner">
+        <div class="logo">🛡️ 神魔大陆攻略组</div>
+        <nav>
+            <ul>
+                <li><a href="#">首页</a></li>
+                <li><a href="#">职业大全</a></li>
+                <li><a href="#">副本攻略</a></li>
+                <li><a href="#">PVP指南</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section class="hero">
+    <h1>神魔大陆守护天赋加点</h1>
+    <p>守护者作为团队的核心防线，天赋点的分配直接决定了团队的生存能力。本文提供最新版本的PVE与PVP加点方案。</p>
+    <button class="btn" onclick="window.scrollTo({top: 800, behavior: 'smooth'})">查看加点图解</button>
+</section>
+
+<main class="container">
+    <div class="grid-layout">
+        <!-- Main Content -->
+        <div class="content-area">
+            
+            <!-- Phase 1: Core Build -->
+            <article class="card">
+                <h2>一、 核心防御流派（PVE/日常）</h2>
+                <p style="margin-bottom: 20px;">此流派侧重于护甲穿透减免、生命值上限及仇恨控制，适合大多数副本环境。核心思路是最大化生存率，确保坦克职责的稳定。</p>
+                
+                <h3>天赋树加点策略：</h3>
+                <div class="talent-tree">
+                    <div class="tree-column">
+                        <div class="tree-title">坚毅系</div>
+                        <div class="skill-node active"><span>1/5</span></div>
+                        <div class="skill-node active"><span>2/5</span></div>
+                        <div class="skill-node active"><span>3/5</span></div>
+                        <div class="skill-node locked"><span>4/5</span></div>
+                        <div class="skill-node locked"><span>5/5</span></div>
+                    </div>
+                    <div class="tree-column">
+                        <div class="tree-title">守护系</div>
+                        <div class="skill-node active"><span>2/5</span></div>
+                        <div class="skill-node active"><span>3/5</span></div>
+                        <div class="skill-node active"><span>3/5</span></div>
+                        <div class="skill-node locked"><span>5/5</span></div>
+                        <div class="skill-node locked"><span>5/5</span></div>
+                    </div>
+                    <div class="tree-column">
+                        <div class="tree-title">狂怒系</div>
+                        <div class="skill-node active"><span>1/5</span></div>
+                        <div class="skill-node active"><span>1/5</span></div>
+                        <div class="skill-node locked"><span>3/5</span></div>
+                        <div class="skill-node locked"><span>5/5</span></div>
+                        <div class="skill-node locked"><span>5/5</span></div>
+                    </div>
+                </div>
+                <p style="font-size: 0.9rem; color: #666;">*注：技能点亮状态为推荐优先级，具体点数请根据版本更新微调。</p>
+            </article>
+
+            <!-- Phase 2: Attributes & Gear -->
+            <article class="card">
+                <h2>二、 属性优先级与装备选择</h2>
+                <table class="stats-table">
+                    <thead>
+                        <tr>
+                            <th width="30%">属性</th>
+                            <th width="70%">推荐指数与说明</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>耐力</strong></td>
+                            <td>最优先属性。大幅提升生命值上限，是守护者血量的基石。</td>
+                        </tr>
+                        <tr>
+                            <td><strong>护甲穿透</strong></td>
+                            <td>次优先级。直接减少受到的伤害，是PVE核心属性。</td>
+                        </tr>
+                        <tr>
+                            <td><strong>力量</strong></td>
+                            <td>提供少量护甲和攻击力，用于平衡属性，建议保持 1:1 或 1:2 比例。</td>
+                        </tr>
+                        <tr>
+                            <td><strong>暴击/急速</strong></td>
+                            <td>低优先级。除非是为了特定装备词缀，否则不作为主要堆叠目标。</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+
+            <!-- Phase 3: PVP Guide -->
+            <article class="card">
+                <h2>三、 PvP 生存加点思路</h2>
+                <p>在竞技场或野外PVP中，守护者需要更侧重于打断和反制。建议在核心防御树的基础上，从守护系中点出“震荡波”或“铁壁”相关天赋。</p>
+                <ul class="guide-list">
+                    <li><span>震荡波</span> <span class="tag pvp">控制技能</span></li>
+                    <li><span>铁壁术</span> <span class="tag pvp">免控/减伤</span></li>
+                    <li><span>挑衅</span> <span class="tag pvp">仇恨强制</span></li>
+                </ul>
+                <div style="margin-top: 15px; padding: 10px; background: #fff8e1; border-left: 4px solid #ff9800; font-size: 0.9rem;">
+                    <strong>实战提示：</strong> PVP中不要一味贪血，合理利用“挑衅”技能将敌方DPS拉离治疗，是扭转战局的关键。
+                </div>
+            </article>
+
+            <!-- FAQ Section -->
+            <article class="card">
+                <h2>四、 常见问题解答 (FAQ)</h2>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">守护者是否需要加攻击天赋？ <span>+</span></div>
+                    <div class="faq-answer">
+                        不需要。守护者的核心职责是吸收伤害和保护队友，攻击力主要用于维持仇恨，而非造成输出。建议将所有点数投入到防御和生存属性上。
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">点错天赋点可以重置吗？ <span>+</span></div>
+                    <div class="faq-answer">
+                        可以。在主城寻找“天赋导师”NPC，花费金币或特定道具即可重置所有天赋点，请放心尝试不同流派。
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">哪个系的天赋最重要？ <span>+</span></div>
+                    <div class="faq-answer">
+                        <strong>坚毅系</strong>最重要。它提供了最直接的生命值加成和减伤效果，是守护者屹立不倒的根本。
+                    </div>
+                </div>
+            </article>
+
+        </div>
+
+        <!-- Sidebar -->
+        <aside>
+            <div class="card">
+                <h3>热门攻略导航</h3>
+                <ul class="quick-links">
+                    <li><a href="#">神魔大陆职业对比</a></li>
+                    <li><a href="#">守护者PVE循环</a></li>
+                    <li><a href="#">BOSS机制详解</a></li>
+                    <li><a href="#">装备附魔指南</a></li>
+                    <li><a href="#">副本快速通关路线</a></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>加点计算器</h3>
+                <p style="font-size: 0.9rem; color: #666; margin-bottom: 10px;">模拟不同点数分配下的生存能力。</p>
+                <div style="background: #eee; height: 150px; border-radius: 4px; display: flex; align-items: center; justify-content: center; color: #999;">
+                    [插件加载区域]
+                </div>
+                <button class="btn" style="width: 100%; margin-top: 10px;">开始模拟</button>
+            </div>
+
+            <div class="card">
+                <h3>社区讨论</h3>
+                <p style="font-size: 0.9rem; margin-bottom: 10px;">加入玩家交流群获取一手情报。</p>
+                <div style="display: flex; gap: 5px;">
+                    <input type="text" placeholder="搜索关键词" style="flex: 1; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
+                    <button class="btn" style="padding: 8px 15px;">搜</button>
+                </div>
+            </div>
+        </aside>
+    </div>
+</main>
+
+<footer>
+    <div class="footer-links">
+        <a href="#">关于我们</a>
+        <a href="#">免责声明</a>
+        <a href="#">联系合作</a>
+        <a href="#">网站地图</a>
+    </div>
+    <p class="copyright">Copyright © 2023 神魔大陆守护攻略组. All Rights Reserved.</p>
+    <p style="font-size: 0.8rem; margin-top: 10px; color: #666;">本站内容仅供玩家参考，所有游戏资料以游戏内实际为准。</p>
+</footer>
+
+<script>
+    // FAQ Toggle Logic
+    function toggleFaq(element) {
+        const parent = element.parentElement;
+        parent.classList.toggle('open');
+        
+        const span = element.querySelector('span');
+        span.textContent = parent.classList.contains('open') ? '-' : '+';
+    }
+
+    // Simple interaction for the "Simulate" button (Mock)
+    const btn = document.querySelector('.card button');
+    if(btn) {
+        btn.addEventListener('click', function() {
+            const originalText = this.textContent;
+            this.textContent = '计算中...';
+            this.disabled = true;
+            setTimeout(() => {
+                this.textContent = '模拟完成';
+                setTimeout(() => {
+                    this.textContent = originalText;
+                    this.disabled = false;
+                }, 1000);
+            }, 800);
+        });
+    }
+</script>
+
+</body>
+  </html>
