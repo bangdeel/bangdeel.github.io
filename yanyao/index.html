@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>眼药 - 科学护眼指南与合理用药常识</title>
+    <meta name="description" content="眼药使用大全：详细解读各类眼药水的作用机制、适用症状及禁忌人群。提供干眼症、视疲劳、红血丝等常见眼部问题的科学护理方案与用药安全提示。">
+    <meta name="keywords" content="眼药,眼药水,护眼,干眼症用药,视疲劳,眼药水推荐">
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            --primary-light: #e6f0fa;
+            --secondary-color: #00a8cc;
+            --accent-color: #ff9800;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --text-light: #999999;
+            --bg-body: #f9fbfd;
+            --bg-white: #ffffff;
+            --border-radius: 8px;
+            --shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            width: 100%;
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 头部导航 */
+        header {
+            background-color: var(--bg-white);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-size: 16px;
+            color: var(--text-main);
+            font-weight: 500;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .cta-button {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .cta-button:hover {
+            background-color: #004494;
+            color: white;
+        }
+
+        /* Hero 区域 */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 18px;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .search-box {
+            background: white;
+            padding: 10px;
+            border-radius: 50px;
+            display: inline-flex;
+            max-width: 500px;
+            width: 100%;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .search-box input {
+            flex: 1;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            outline: none;
+            border-radius: 50px;
+        }
+
+        .search-box button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 30px;
+            border-radius: 40px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+
+        .search-box button:hover {
+            background-color: #004494;
+        }
+
+        /* 常见问题/警示区 */
+        .warning-section {
+            background-color: #fff3cd;
+            border-bottom: 1px solid #ffeeba;
+            padding: 20px 0;
+        }
+
+        .warning-content {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: #856404;
+            font-size: 15px;
+        }
+
+        .warning-icon {
+            font-size: 24px;
+        }
+
+        /* 主要内容区 */
+        main {
+            padding: 40px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 28px;
+            color: var(--text-main);
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: var(--text-secondary);
+        }
+
+        /* 分类卡片网格 */
+        .grid-layout {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+
+        .card {
+            background: var(--bg-white);
+            border-radius: var(--border-radius);
+            padding: 25px;
+            box-shadow: var(--shadow);
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 1px solid #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .card-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-light);
+            color: var(--primary-color);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .card p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .card-link {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .card-link::after {
+            content: '→';
+            margin-left: 5px;
+            transition: margin-left 0.2s;
+        }
+
+        .card-link:hover::after {
+            margin-left: 10px;
+        }
+
+        /* 详细内容列表 */
+        .info-list {
+            background: var(--bg-white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .info-item {
+            border-bottom: 1px solid #f0f0f0;
+            padding: 25px;
+            display: flex;
+            gap: 20px;
+            transition: background 0.2s;
+        }
+
+        .info-item:last-child {
+            border-bottom: none;
+        }
+
+        .info-item:hover {
+            background-color: #fafafa;
+        }
+
+        .info-number {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--primary-light);
+            min-width: 50px;
+            line-height: 1;
+        }
+
+        .info-content h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+            color: var(--text-main);
+        }
+
+        .info-content p {
+            font-size: 15px;
+            color: var(--text-secondary);
+        }
+
+        /* 用药指南部分 */
+        .guide-section {
+            background-color: var(--bg-white);
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 60px;
+        }
+
+        .guide-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .step {
+            display: flex;
+            gap: 15px;
+        }
+
+        .step-number {
+            background-color: var(--primary-color);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+
+        .step-content h4 {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .step-content p {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        /* 常见问题 */
+        .faq-section {
+            margin-bottom: 60px;
+        }
+
+        .faq-item {
+            background: var(--bg-white);
+            border-radius: var(--border-radius);
+            margin-bottom: 15px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .faq-question:hover {
+            background-color: #fafafa;
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: var(--text-secondary);
+            font-size: 15px;
+            display: none;
+            line-height: 1.7;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--primary-color);
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: #2c3e50;
+            color: #bdc3c7;
+            padding: 50px 0 20px;
+            font-size: 14px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #34495e;
+            padding-top: 20px;
+            text-align: center;
+            font-size: 13px;
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .nav-wrapper {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+            }
+
+            nav ul {
+                margin: 15px 0;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .info-item {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 头部导航 -->
+    <header>
+        <div class="container nav-wrapper">
+            <div class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h5"/><path d="M22 12h-5"/><path d="M4.93 4.93l3.54 3.54"/><path d="M15.54 15.54l3.54 3.54"/><path d="M4.93 19.07l3.54-3.54"/><path d="M15.54 8.46l3.54-3.54"/></svg>
+                <span>眼药指南</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#categories">分类选购</a></li>
+                    <li><a href="#usage">使用方法</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+            <a href="#" class="cta-button">咨询医生</a>
+        </div>
+    </header>
+
+    <!-- 警示条 -->
+    <div class="warning-section">
+        <div class="container warning-content">
+            <span class="warning-icon">⚠️</span>
+            <span>重要提示：本页面内容仅供参考，不能替代专业医疗诊断。眼部出现红肿、剧痛或视力突然下降，请立即就医。</span>
+        </div>
+    </div>
+
+    <!-- Hero 区域 -->
+    <section class="hero">
+        <div class="container">
+            <h1>科学认识与合理使用眼药</h1>
+            <p>面对干涩、疲劳、红血丝等眼部困扰，选择正确的眼药水至关重要。我们为您提供各类眼药的功能解析、适用症状及安全用药指南。</p>
+            <div class="search-box">
+                <input type="text" placeholder="搜索您关心的症状，如：干眼症、红血丝...">
+                <button>搜索</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 主要内容 -->
+    <main class="container">
+        
+        <!-- 分类推荐 -->
+        <section id="categories">
+            <div class="section-title">
+                <h2>按症状与需求分类</h2>
+                <p>根据您的眼部不适类型，找到最对症的眼药产品</p>
+            </div>
+            <div class="grid-layout">
+                <article class="card">
+                    <div class="card-icon">💧</div>
+                    <h3>人工泪液</h3>
+                    <p>模拟人体泪液成分，主要用于缓解眼睛干涩、异物感。分为含防腐剂和不含防腐剂两种类型。</p>
+                    <a href="#" class="card-link">查看详情</a>
+                </article>
+                <article class="card">
+                    <div class="card-icon">👁️</div>
+                    <h3>缓解视疲劳</h3>
+                    <p>含有维生素B12、薄荷脑或三氯叔丁醇成分，能快速缓解长时间看屏幕引起的酸胀、干涩。</p>
+                    <a href="#" class="card-link">查看详情</a>
+                </article>
+                <article class="card">
+                    <div class="card-icon">❤️</div>
+                    <h3>抗红血丝</h3>
+                    <p>主要成分为盐酸四氢唑林或萘甲唑啉，具有收缩血管作用，适合短期消除眼部充血。</p>
+                    <a href="#" class="card-link">查看详情</a>
+                </article>
+                <article class="card">
+                    <div class="card-icon">🦠</div>
+                    <h3>抗感染类</h3>
+                    <p>含抗生素成分（如左氧氟沙星、妥布霉素），仅用于细菌感染引起的结膜炎，不可滥用。</p>
+                    <a href="#" class="card-link">查看详情</a>
+                </article>
+            </div>
+        </section>
+
+        <!-- 核心科普：人工泪液 -->
+        <section class="info-list">
+            <div class="info-item">
+                <div class="info-number">01</div>
+                <div class="info-content">
+                    <h3>什么是人工泪液？</h3>
+                    <p>人工泪液是眼科常用的非处方药，主要用于治疗干眼症。它不是真的眼泪，而是模仿人体泪液成分（如玻璃酸钠、羧甲基纤维素钠等）配制而成的眼用制剂。对于长期使用电脑、手机导致泪液蒸发过快的人群，人工泪液是首选的缓解方案。</p>
+                </div>
+            </div>
+            <div class="info-item">
+                <div class="info-number">02</div>
+                <div class="info-content">
+                    <h3>如何选择人工泪液？</h3>
+                    <p>选择时请留意成分表：<strong>玻璃酸钠</strong>保湿效果好，适合长期使用；<strong>聚乙烯醇</strong>价格实惠，但保湿时间较短。建议优先选择<strong>不含防腐剂</strong>的单支包装，虽然价格稍高，但更适合长期每天多次使用，以减少对角膜上皮的损伤。</p>
+                </div>
+            </div>
+            <div class="info-item">
+                <div class="info-number">03</div>
+                <div class="info-content">
+                    <h3>使用注意事项</h3>
+                    <p>滴眼药水前应清洁双手。滴入后可用手指按压内眼角（泪囊区）2-3分钟，防止药液通过鼻泪管流入鼻腔流失。不要频繁更换不同品牌的药水，以免引起过敏反应。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 用药指南 -->
+        <section id="usage">
+            <div class="section-title">
+                <h2>规范滴眼操作指南</h2>
+                <p>正确的滴药手法能提高药效，减少副作用</p>
+            </div>
+            <div class="guide-section">
+                <div class="guide-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>清洁双手</h4>
+                            <p>使用流动水和肥皂彻底清洗双手，避免细菌带入眼睛。</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>摇匀药液</h4>
+                            <p>如果是混悬液（如玻璃酸钠），使用前需轻轻摇匀，确保药物成分均匀。</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>头部后仰</h4>
+                            <p>身体坐直或仰卧，头部轻轻后仰，用手指轻轻拉开下眼睑。</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>滴入药液</h4>
+                            <p>将药液滴入下眼睑结膜囊内，避开鼻尖。一般一次1-2滴即可。</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h4>按压泪囊</h4>
+                            <p>滴完后轻轻闭上眼睛，用手指按压内眼角3-5分钟，防止药液流出。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 常见问题 FAQ -->
+        <section id="faq">
+            <div class="section-title">
+                <h2>常见问题解答</h2>
+            </div>
+            <div class="faq-section">
+                <div class="faq-item">
+                    <div class="faq-question">眼药水可以长期滴吗？</div>
+                    <div class="faq-answer">
+                        这取决于眼药水的类型。人工泪液（不含防腐剂）在医生指导下通常可以长期使用。但含有收缩血管成分（如去红血丝药水）或抗生素的药水，不建议长期连续使用，以免产生依赖性或导致耐药性。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">滴眼药水时眼睛有刺痛感怎么办？</div>
+                    <div class="faq-answer">
+                        如果滴入后立即出现剧烈刺痛或烧灼感，可能是药物对角膜有刺激性，或者是眼药水已经过期或受到污染。应立即用大量清水冲洗眼睛，并停止使用该药水，必要时就医。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">戴隐形眼镜时可以滴眼药水吗？</div>
+                    <div class="faq-answer">
+                        最好先摘下隐形眼镜再滴药。如果必须佩戴，请选择专门为隐形眼镜设计的润眼液（隐形眼镜护理液），普通眼药水可能会溶解镜片或损伤角膜。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">红血丝眼药水和人工泪液可以混用吗？</div>
+                    <div class="faq-answer">
+                        不建议随意混用。红血丝眼药水主要作用是收缩血管，长期使用可能导致“反弹”现象。建议先使用人工泪液缓解干涩，如果充血严重，应咨询医生后决定是否使用血管收缩剂。
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo" style="margin-bottom: 15px;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h5"/><path d="M22 12h-5"/><path d="M4.93 4.93l3.54 3.54"/><path d="M15.54 15.54l3.54 3.54"/><path d="M4.93 19.07l3.54-3.54"/><path d="M15.54 8.46l3.54-3.54"/></svg>
+                        <span>眼药指南</span>
+                    </div>
+                    <p style="color: #95a5a6;">致力于为用户提供准确、科学的眼部护理与用药知识。关注眼健康，从科学选药开始。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#">首页</a></li>
+                        <li><a href="#">分类选购</a></li>
+                        <li><a href="#">使用教程</a></li>
+                        <li><a href="#">专家咨询</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>相关资源</h4>
+                    <ul>
+                        <li><a href="#">干眼症自测</a></li>
+                        <li><a href="#">视疲劳测试</a></li>
+                        <li><a href="#">药品说明书库</a></li>
+                        <li><a href="#">就医指南</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系我们</h4>
+                    <ul>
+                        <li>邮箱：health@example.com</li>
+                        <li>电话：400-123-4567</li>
+                        <li>地址：健康科技园区A座</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 眼药指南 版权所有 | 仅供科普参考，不作为医疗诊断依据</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 交互脚本 -->
+    <script>
+        // FAQ 手风琴效果
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', event => {
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+            });
+        });
+
+        // 简单的搜索框交互（仅视觉反馈）
+        const searchInput = document.querySelector('.search-box input');
+        const searchButton = document.querySelector('.search-box button');
+        
+        function performSearch() {
+            if(searchInput.value.trim() !== "") {
+                alert("正在为您搜索关于 \"" + searchInput.value + "\" 的眼药相关信息...");
+                searchInput.value = "";
+            }
+        }
+
+        searchButton.addEventListener('click', performSearch);
+        searchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') performSearch();
+        });
+    </script>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</body>
+</html>
