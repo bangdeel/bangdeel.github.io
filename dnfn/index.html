@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DNF女气功攻略站：为您提供最新的女气功技能加点、装备搭配、刷图流派推荐及实战技巧。专注念气罩、狮子吼、雷鸣避雷针等核心玩法解析。">
+    <meta name="keywords" content="DNF女气功, 女气功加点, 魔皇, 花样年华, 念气罩, DNF攻略">
+    <title>DNF女气功 - 热门流派推荐与实战加点攻略</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #ff8200; /* DNF橙色 */
+            --secondary-color: #1a1a1a;
+            --bg-color: #f4f4f4;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-sub: #666666;
+            --accent-green: #00c853; /* 魔法/能量感 */
+            --border-radius: 8px;
+            --spacing-unit: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Microsoft YaHei", "Heiti SC", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* 头部导航 */
+        header {
+            background-color: var(--secondary-color);
+            color: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 60px;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: #fff;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero 区域 */
+        .hero {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: #fff;
+            padding: 60px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at center, rgba(255, 130, 0, 0.1) 0%, transparent 70%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #ccc;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .cta-btn:hover {
+            background-color: #e67300;
+            transform: translateY(-2px);
+        }
+
+        /* 通用区块样式 */
+        section {
+            padding: 40px 0;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 24px;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 12px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: var(--text-main);
+        }
+
+        .section-more {
+            font-size: 0.9rem;
+            color: var(--text-sub);
+        }
+
+        /* 核心流派卡片 */
+        .class-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #e0e0e0;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .card-img-placeholder {
+            width: 100%;
+            height: 160px;
+            background-color: #ddd;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .card-img-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-tag {
+            display: inline-block;
+            background-color: #fff0e0;
+            color: var(--primary-color);
+            font-size: 0.75rem;
+            padding: 4px 8px;
+            border-radius: 4px;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+
+        .card p {
+            font-size: 0.9rem;
+            color: var(--text-sub);
+            margin-bottom: 16px;
+        }
+
+        .card-link {
+            color: var(--primary-color);
+            font-weight: bold;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .card-link::after {
+            content: '→';
+            margin-left: 4px;
+        }
+
+        /* 技能加点表格 */
+        .skill-table-wrapper {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            overflow-x: auto;
+        }
+
+        .skill-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px;
+        }
+
+        .skill-table th, .skill-table td {
+            text-align: left;
+            padding: 12px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .skill-table th {
+            background-color: #f9f9f9;
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        .skill-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .skill-table tr:hover {
+            background-color: #fafafa;
+        }
+
+        .rank-badge {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+            border-radius: 50%;
+            background-color: #eee;
+            color: #666;
+            font-size: 0.8rem;
+            margin-right: 8px;
+        }
+
+        .rank-1 { background-color: #ff4d4f; color: white; }
+        .rank-2 { background-color: #faad14; color: white; }
+        .rank-3 { background-color: #52c41a; color: white; }
+
+        /* 装备搭配 */
+        .build-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+
+        .build-list {
+            flex: 1;
+            min-width: 300px;
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .build-list h3 {
+            margin-bottom: 16px;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 8px;
+            display: inline-block;
+        }
+
+        .build-item {
+            margin-bottom: 16px;
+        }
+
+        .build-item h4 {
+            font-size: 1rem;
+            margin-bottom: 4px;
+        }
+
+        .build-item p {
+            font-size: 0.85rem;
+            color: var(--text-sub);
+        }
+
+        .build-highlight {
+            background-color: #fff9f0;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            border: 1px solid #ffe0b2;
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .build-highlight h3 {
+            color: var(--primary-color);
+            margin-bottom: 12px;
+        }
+
+        /* 常见问题 */
+        .faq-item {
+            background: var(--card-bg);
+            margin-bottom: 12px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .faq-question {
+            padding: 16px 20px;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fff;
+        }
+
+        .faq-question:hover {
+            background-color: #f9f9f9;
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+            background-color: #fafafa;
+            color: var(--text-sub);
+            font-size: 0.95rem;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 16px 20px;
+            max-height: 200px; /* 近似值 */
+            border-top: 1px solid #eee;
+        }
+
+        .faq-icon {
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: var(--secondary-color);
+            color: #888;
+            padding: 40px 0;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        footer p {
+            margin-bottom: 8px;
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .nav-wrapper {
+                flex-direction: column;
+                height: auto;
+                padding: 10px 0;
+            }
+            nav ul {
+                margin-top: 10px;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 16px;
+            }
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <div class="logo">
+                <span>DNF</span> 女气功百科
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">技能加点</a></li>
+                    <li><a href="#">装备搭配</a></li>
+                    <li><a href="#">刷图流派对</a></li>
+                    <li><a href="#">装备百科</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <h1>掌控念气，守护队友</h1>
+                <p>DNF女气功（气功师）深度攻略站。从念气罩保命到雷鸣避雷针爆发，为您提供最全面的刷图流派、装备选择与技能加点指南。</p>
+                <a href="#builds" class="cta-btn">查看热门流派</a>
+            </div>
+        </section>
+
+        <!-- 核心流派推荐 -->
+        <section class="container">
+            <div class="section-header">
+                <h2 class="section-title">主流流派推荐</h2>
+                <span class="section-more">根据当前版本环境更新</span>
+            </div>
+            <div class="class-grid">
+                <!-- Card 1 -->
+                <article class="card">
+                    <div class="card-img-placeholder">
+                        <img src="https://picsum.photos/seed/buff/400/250" alt="红眼流女气功">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-tag">红眼流 (TP溢出)</span>
+                        <h3>辅助流 (女气功)</h3>
+                        <p>核心装备：大天御套装。利用“念气罩”为核心，为队友提供霸体保护，利用“念气罩”和“狮子吼”进行强力辅助。</p>
+                        <a href="#" class="card-link">查看详细攻略</a>
+                    </div>
+                </article>
+                <!-- Card 2 -->
+                <article class="card">
+                    <div class="card-img-placeholder">
+                        <img src="https://picsum.photos/seed/dps/400/250" alt="输出流女气功">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-tag">输出流</span>
+                        <h3>光兵输出流</h3>
+                        <p>核心装备：望穿尽头的视线、贪食戒指、雷神之矛。舍弃部分辅助能力，将TP和技能点全数投入输出技能。</p>
+                        <a href="#" class="card-link">查看详细攻略</a>
+                    </div>
+                </article>
+                <!-- Card 3 -->
+                <article class="card">
+                    <div class="card-img-placeholder">
+                        <img src="https://picsum.photos/seed/elf/400/250" alt="精灵流">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-tag">精灵流</span>
+                        <h3>精灵流 (TP流)</h3>
+                        <p>核心装备：天界机械臂铠。利用TP技能“念气罩”的等级提升，大幅增加罩子的持续时间，提供更极致的生存能力。</p>
+                        <a href="#" class="card-link">查看详细攻略</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- 技能加点 -->
+        <section class="container" style="background-color: #fff; padding: 40px; border-radius: 8px;">
+            <div class="section-header">
+                <h2 class="section-title">通用加点思路</h2>
+            </div>
+            <p style="margin-bottom: 20px; color: #666;">女气功加点主要围绕TP技能“念气罩”的等级展开。输出流需要点满“念气波”和“雷鸣避雷针”，辅助流则侧重“狮子吼”和“念气罩”。</p>
+            
+            <div class="skill-table-wrapper">
+                <table class="skill-table">
+                    <thead>
+                        <tr>
+                            <th width="25%">技能名称</th>
+                            <th width="15%">等级</th>
+                            <th width="15%">TP</th>
+                            <th width="45%">加点建议</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="rank-badge rank-1">核心</span>念气罩</td>
+                            <td>满 (10/10)</td>
+                            <td>10</td>
+                            <td>必满技能，根据流派决定是否加TP。辅助流加满TP以延长罩子时间。</td>
+                        </tr>
+                        <tr>
+                            <td><span class="rank-badge rank-2">主力</span>念气波</td>
+                            <td>满 (10/10)</td>
+                            <td>3</td>
+                            <td>主要的起手和输出技能，CD短伤害稳定。</td>
+                        </tr>
+                        <tr>
+                            <td><span class="rank-badge rank-2">主力</span>雷鸣避雷针</td>
+                            <td>满 (10/10)</td>
+                            <td>5</td>
+                            <td>爆发技能，需配合“念气罩”使用，护石推荐。</td>
+                        </tr>
+                        <tr>
+                            <td><span class="rank-badge rank-3">控制</span>狮子吼</td>
+                            <td>满 (10/10)</td>
+                            <td>0</td>
+                            <td>辅助流核心控制技能，用于聚怪。</td>
+                        </tr>
+                        <tr>
+                            <td><span class="rank-badge rank-3">续航</span>螺旋念气场</td>
+                            <td>满 (10/10)</td>
+                            <td>0</td>
+                            <td>清小怪技能，伤害一般但范围大。</td>
+                        </tr>
+                        <tr>
+                            <td>念兽：龙虎啸</td>
+                            <td>满 (10/10)</td>
+                            <td>0</td>
+                            <td>增加四维属性，提升全队输出。</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- 装备搭配详解 -->
+        <section id="builds" class="container">
+            <div class="section-header">
+                <h2 class="section-title">装备搭配详解</h2>
+            </div>
+            <div class="build-container">
+                <div class="build-list">
+                    <h3>上衣推荐</h3>
+                    <div class="build-item">
+                        <h4>望穿尽头的视线</h4>
+                        <p>目前最主流的护肩，提供高额暴击率、三速和攻速，是绝大多数输出流女气功的首选。</p>
+                    </div>
+                    <div class="build-item">
+                        <h4>大自然的力量</h4>
+                        <p>自带念气罩效果，适合需要频繁释放罩子的辅助流玩法。</p>
+                    </div>
+                    <div class="build-item">
+                        <h4>深海之鳞上衣</h4>
+                        <p>提供攻击速度和移动速度，适合异界套过渡或特定自定义词条搭配。</p>
+                    </div>
+                </div>
+                <div class="build-list">
+                    <h3>下装推荐</h3>
+                    <div class="build-item">
+                        <h4>玉龙护魂下装</h4>
+                        <p>提供高额攻击速度和技能攻击力，完美契合女气功对攻速的需求。</p>
+                    </div>
+                    <div class="build-item">
+                        <h4>贫瘠沙漠之躯</h4>
+                        <p>提供三速、暴击和伤害，是次选的护腿部位。</p>
+                    </div>
+                </div>
+                <div class="build-highlight">
+                    <h3>核心护石推荐</h3>
+                    <p style="margin-bottom: 12px;"><strong>雷鸣避雷针 + 念气波 + 念兽：龙虎啸</strong></p>
+                    <p>这套护石组合能最大化女气功的爆发能力和续航能力。雷鸣避雷针作为主要爆发手段，念气波作为起手和连招衔接，龙虎啸提供全队增益。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 常见问题 FAQ -->
+        <section class="container">
+            <div class="section-header">
+                <h2 class="section-title">新手常见问题</h2>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">女气功应该穿什么鞋子？</div>
+                    <div class="faq-answer">
+                        女气功非常依赖攻击速度和移动速度。推荐装备“玉龙护魂之靴”或“深海之鳞护腿”（自带鞋子属性），这些装备能提供极高的攻速，让念气罩和狮子吼的衔接更加流畅。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">念气罩的作用是什么？</div>
+                    <div class="faq-answer">
+                        念气罩是女气阶最核心的技能。它能为队友提供霸体状态，防止被控制，是团本中保护队友的重要手段。对于输出流玩家，罩子也是防止自身被控制、维持输出节奏的关键。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">如何快速提升伤害？</div>
+                    <div class="faq-answer">
+                        首先确保护肩选择“望穿尽头的视线”，戒指选择“雷神之矛”或“能量之源”。其次，务必优先点满TP技能“念气罩”和“念气波”，并搭配合适的自定义耳环和手镯，提升技能攻击力。
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 DNF女气功攻略站. 本站内容仅供玩家参考，游戏版权归韩国Neople公司所有。</p>
+            <p>本站不提供任何游戏下载服务，请通过官方渠道下载游戏。</p>
+        </div>
+    </footer>
+
+    <script>
+        // 简单的 FAQ 折叠逻辑
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // 关闭其他打开的项
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // 切换当前项
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
