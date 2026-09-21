@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="天音寺官方门户 - 探索中国古典佛教文化、禅修体验、禅茶一味以及天音寺历史渊源。提供在线禅修课程、寺庙文化介绍及宁静致远的主题体验。">
+    <meta name="keywords" content="天音寺, 禅修, 佛教文化, 寺庙, 禅茶, 静心, 禅意生活">
+    <title>天音寺 - 静心禅修与佛教文化体验中心</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #3E5D49;
+            --secondary-color: #8FA399;
+            --accent-color: #D4A373;
+            --bg-color: #F9F8F4;
+            --text-main: #2C3E50;
+            --text-light: #5D6D7E;
+            --white: #FFFFFF;
+            --card-shadow: 0 4px 20px rgba(62, 93, 73, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-size: 1rem;
+            color: var(--text-main);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .cta-btn {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 8px 20px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .cta-btn:hover {
+            background-color: #2E4238;
+            transform: translateY(-1px);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 600px;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://picsum.photos/seed/temple_spirit/1920/1080.jpg') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .btn-outline {
+            border: 1px solid var(--white);
+            color: var(--white);
+            padding: 10px 30px;
+            border-radius: 4px;
+            transition: var(--transition);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--white);
+            color: var(--primary-color);
+        }
+
+        /* Features Section */
+        .features {
+            background-color: var(--white);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 40px 20px;
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--card-shadow);
+        }
+
+        .icon-box {
+            width: 70px;
+            height: 70px;
+            background-color: rgba(62, 93, 73, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: var(--primary-color);
+            font-size: 1.8rem;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* About Section */
+        .about {
+            background-color: var(--bg-color);
+        }
+
+        .about-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: var(--card-shadow);
+        }
+
+        .about-text h2 {
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin-bottom: 25px;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            color: var(--text-light);
+        }
+
+        .about-list {
+            margin-top: 30px;
+        }
+
+        .about-list li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            color: var(--text-main);
+        }
+
+        .about-list li::before {
+            content: "✓";
+            color: var(--accent-color);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        /* Activities Grid */
+        .activities {
+            background-color: var(--white);
+        }
+
+        .activity-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .activity-card {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            background: var(--white);
+        }
+
+        .activity-img {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .activity-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .activity-card:hover .activity-img img {
+            transform: scale(1.05);
+        }
+
+        .activity-info {
+            padding: 25px;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 4px 10px;
+            background-color: rgba(212, 163, 115, 0.15);
+            color: var(--accent-color);
+            font-size: 0.75rem;
+            border-radius: 20px;
+            margin-bottom: 10px;
+        }
+
+        .activity-info h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .activity-info p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .activity-link {
+            color: var(--primary-color);
+            font-weight: 500;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .activity-link::after {
+            content: "→";
+            margin-left: 5px;
+            transition: var(--transition);
+        }
+
+        .activity-card:hover .activity-link::after {
+            margin-left: 10px;
+        }
+
+        /* FAQ Section */
+        .faq {
+            background-color: var(--bg-color);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        details {
+            background: var(--white);
+            margin-bottom: 15px;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+        }
+
+        summary {
+            padding: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--primary-color);
+            list-style: none;
+            position: relative;
+            padding-right: 40px;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::after {
+            content: "+";
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+            color: var(--accent-color);
+        }
+
+        details[open] summary::after {
+            content: "-";
+        }
+
+        .faq-content {
+            padding: 0 20px 20px;
+            color: var(--text-light);
+            border-top: 1px solid #f0f0f0;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: rgba(255, 255, 255, 0.8);
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h3 {
+            color: var(--white);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .footer-brand p {
+            font-size: 0.9rem;
+            max-width: 300px;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .newsletter input {
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .newsletter button {
+            width: 100%;
+            padding: 10px;
+            background-color: var(--accent-color);
+            color: var(--white);
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .newsletter button:hover {
+            background-color: #bfa07a;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .nav-wrapper {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+            }
+
+            nav ul {
+                margin: 15px 0;
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .about-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <span>✦</span> 天音寺
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#about" class="active">寺院简介</a></li>
+                    <li><a href="#culture">禅修文化</a></li>
+                    <li><a href="#activities">法会活动</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+            <a href="#visit" class="cta-btn">预约参访</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>万籁俱寂，梵音入心</h1>
+                <p>天音寺，坐落于群山环抱之中，是一座以禅修、文化、慈善为宗旨的千年古刹。在这里，寻找内心的宁静，聆听天籁之音。</p>
+                <div class="hero-btns">
+                    <a href="#about" class="cta-btn">了解天音</a>
+                    <a href="#activities" class="btn-outline">查看法会</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="section-padding features">
+            <div class="container">
+                <div class="section-title">
+                    <h2>禅意生活</h2>
+                    <p>回归本真，在简约中品味生命的厚重。天音寺致力于传播正信佛教文化，引导大众建立和谐、健康的生活态度。</p>
+                </div>
+                <div class="features-grid">
+                    <article class="feature-card">
+                        <div class="icon-box">🧘</div>
+                        <h3>禅修体验</h3>
+                        <p>提供早晚功课、坐禅、行禅及持咒修法，帮助修行者净化心灵，提升专注力。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="icon-box">🍵</div>
+                        <h3>禅茶一味</h3>
+                        <p>品茗论道，以茶会友。在茶香中感悟禅机，体验中国传统文化中的雅致生活。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="icon-box">📚</div>
+                        <h3>经典研读</h3>
+                        <p>定期开设佛学讲座与经典读书会，深入浅出解读《金刚经》、《心经》等经典。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section-padding about">
+            <div class="container">
+                <div class="about-wrapper">
+                    <div class="about-image">
+                        <img src="https://picsum.photos/seed/temple_architecture/600/400.jpg" alt="天音寺大雄宝殿">
+                    </div>
+                    <div class="about-text">
+                        <h2>千年古刹，源远流长</h2>
+                        <p>天音寺始建于唐贞观年间，依山而建，气势恢宏。寺内古木参天，晨钟暮鼓，梵音缭绕。这里不仅是佛教徒修行的道场，也是社会各界人士寻求心灵慰藉、净化心灵的圣地。</p>
+                        <p>寺院坚持“庄严国土，利乐有情”的宗旨，在保持传统丛林清规的同时，积极适应现代社会，开展慈悲救助、环保护生及文化教育等公益慈善事业。</p>
+                        <ul class="about-list">
+                            <li>唐贞观年间始建</li>
+                            <li>依山而建，环境清幽</li>
+                            <li>历代高僧驻锡讲经</li>
+                            <li>国家级文物保护建筑</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Activities Section -->
+        <section id="activities" class="section-padding activities">
+            <div class="container">
+                <div class="section-title">
+                    <h2>近期法会与活动</h2>
+                    <p>随缘赴约，共沾法喜。以下是寺院近期举办的主要活动安排，欢迎大众随喜参与。</p>
+                </div>
+                <div class="activity-grid">
+                    <article class="activity-card">
+                        <div class="activity-img">
+                            <img src="https://picsum.photos/seed/lantern_festival/400/300.jpg" alt="中秋赏月祈福法会">
+                        </div>
+                        <div class="activity-info">
+                            <span class="tag">传统节日</span>
+                            <h3>中秋赏月祈福法会</h3>
+                            <p>农历八月十五，天音寺将举行盛大的中秋祈福供灯法会，祈愿国泰民安，阖家幸福。</p>
+                            <a href="#" class="activity-link">查看详情</a>
+                        </div>
+                    </article>
+                    <article class="activity-card">
+                        <div class="activity-img">
+                            <img src="https://picsum.photos/seed/zazen/400/300.jpg" alt="禅修静修营">
+                        </div>
+                        <div class="activity-info">
+                            <span class="tag">修行课程</span>
+                            <h3>秋季禅修静修营</h3>
+                            <p>为期七天的封闭式禅修体验，由资深法师指导，深入实修，调伏身心烦恼。</p>
+                            <a href="#" class="activity-link">立即报名</a>
+                        </div>
+                    </article>
+                    <article class="activity-card">
+                        <div class="activity-img">
+                            <img src="https://picsum.photos/seed/tea_ceremony/400/300.jpg" alt="禅茶文化体验日">
+                        </div>
+                        <div class="activity-info">
+                            <span class="tag">文化体验</span>
+                            <h3>禅茶文化体验日</h3>
+                            <p>体验宋代点茶技艺，品鉴寺院自产禅茶，感受茶禅一味的独特魅力。</p>
+                            <a href="#" class="activity-link">预约席位</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="section-padding faq">
+            <div class="container">
+                <div class="section-title">
+                    <h2>参访须知</h2>
+                </div>
+                <div class="faq-container">
+                    <details>
+                        <summary>天音寺的开放时间是什么时候？</summary>
+                        <div class="faq-content">
+                            寺院通常在早晨5:00开门，傍晚18:00关门。具体开放时间可能会因季节变化或特殊法会而调整，建议出行前通过官网查询最新公告。
+                        </div>
+                    </details>
+                    <details>
+                        <summary>游客可以进寺参观吗？</summary>
+                        <div class="faq-content">
+                            当然可以。天音寺欢迎所有社会人士前来参观、礼佛。为了维护寺院清净庄严的环境，请大家在参观时保持安静，衣着得体，不喧哗、不追逐打闹。
+                        </div>
+                    </details>
+                    <details>
+                        <summary>如何参与寺院的禅修活动？</summary>
+                        <div class="faq-content">
+                            寺院定期举办公益禅修课程，通常需要提前通过官方网站或微信公众号进行预约报名。具体的报名条件、时间及费用请留意活动公告。
+                        </div>
+                    </details>
+                    <details>
+                        <summary>寺内提供斋饭吗？</summary>
+                        <div class="faq-content">
+                            寺院为前来参访的信众提供免费的过堂斋饭（午斋）。需要遵守“过堂”礼仪，依序排队，食不言，寝不语，惜福惜物。
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>天音寺</h3>
+                    <p>庄严国土，利乐有情。致力于弘扬佛法，服务社会，净化人心。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#about">寺院简介</a></li>
+                        <li><a href="#culture">文化动态</a></li>
+                        <li><a href="#activities">法会安排</a></li>
+                        <li><a href="#visit">交通指南</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>相关服务</h4>
+                    <ul>
+                        <li><a href="#">在线礼佛</a></li>
+                        <li><a href="#">功德随喜</a></li>
+                        <li><a href="#">图书阅览</a></li>
+                        <li><a href="#">义工招募</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col newsletter">
+                    <h4>订阅动态</h4>
+                    <p style="font-size:0.85rem; margin-bottom:10px;">获取最新法会信息与禅修课程通知。</p>
+                    <form onsubmit="event.preventDefault(); alert('感谢您的订阅！我们将定期发送相关信息。');">
+                        <input type="email" placeholder="请输入您的邮箱" required>
+                        <button type="submit">订阅</button>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 天音寺 版权所有 | 沪ICP备XXXXXXXX号</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+                          </html>
